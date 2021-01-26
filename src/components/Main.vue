@@ -1,5 +1,6 @@
 <template>
     <div>
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
        <h3>中国疫情</h3>
        <p class="txt">数据来源:中国及各地卫建委每日发布</p>
        <p class="txt">数据非实时刷新，可能有误差，仅供参考，更新于 {{timer | formatTimer}}</p>
