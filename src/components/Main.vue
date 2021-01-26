@@ -6,22 +6,22 @@
        <p class="txt">数据非实时刷新，可能有误差，仅供参考，更新于 {{timer | formatTimer}}</p>
 
        <div class="flexbox">
-           <div class="item">
+           <span class="item">
                <div class="red bold">{{chinaNow.currentConfirmedCount}}</div>
                <div class="txt bold">现存确诊</div>
-           </div>
-           <div class="item">
+           </span>
+           <span class="item">
                <div class="lightRed bold">{{chinaNow.confirmedCount}}</div>
                <div class="txt bold">累计确诊</div>
-           </div>
-           <div class="item">
+           </span>
+           <span class="item">
                <div class="green bold">{{chinaNow.curedCount}}</div>
                <div class="txt bold">累计治愈</div>
-           </div>
-           <div class="item">
+           </span>
+           <span class="item">
                <div class="gray bold">{{chinaNow.deadCount}}</div>
                <div class="txt bold">累计死亡</div>
-           </div>
+           </span>
        </div>
 
 
