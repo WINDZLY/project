@@ -11,4 +11,5 @@ docker rm -f project &> /dev/null
 docker run -d --restart=on-failure:5\
     -p 9901:80 \
     -v $PWD/dist:/usr/share/nginx/html \
+    -v /home/windzly/nginx/conf.d:/etc/nginx/conf.d \
     --name project nginx
