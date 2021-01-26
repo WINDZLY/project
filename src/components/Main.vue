@@ -6,22 +6,25 @@
        <p class="txt">数据非实时刷新，可能有误差，仅供参考，更新于 {{timer | formatTimer}}</p>
 
        <div class="flexbox">
-           <div class="item">
+           <span class="item">
                <div class="red bold">{{chinaNow.currentConfirmedCount}}</div>
                <div class="txt bold">现存确诊</div>
-           </div>
-           <div class="item">
+           </span>
+           <span class="item">
                <div class="lightRed bold">{{chinaNow.confirmedCount}}</div>
                <div class="txt bold">累计确诊</div>
-           </div>
-           <div class="item">
+           </span>
+           
+       </div>
+       <div class="flexbox">
+           <span class="item">
                <div class="green bold">{{chinaNow.curedCount}}</div>
                <div class="txt bold">累计治愈</div>
-           </div>
-           <div class="item">
+           </span>
+           <span class="item">
                <div class="gray bold">{{chinaNow.deadCount}}</div>
                <div class="txt bold">累计死亡</div>
-           </div>
+           </span>
        </div>
 
 
@@ -122,6 +125,9 @@
                <div class="lightRed bold">{{worldNow.confirmedCount}}</div>
                <div class="txt bold">累计确诊</div>
            </div>
+       </div>
+
+       <div class="flexbox">
            <div class="item">
                <div class="green bold">{{worldNow.curedCount}}</div>
                <div class="txt bold">累计治愈</div>
@@ -320,7 +326,6 @@ export default {
                 theMsg.msg = "查看更多地区"
                 this.newListData = this.newListData.slice(0,6)
             }
-
             theMsg.flag = !theMsg.flag
         },
         showMoreOrLessTwo(theMsg) {
@@ -331,7 +336,6 @@ export default {
                 theMsg.msg = "查看更多地区"
                 this.countries = this.tmpCountries.slice(0,6)
             }
-
             theMsg.flag = !theMsg.flag
         },
         showCities(e, item) {
@@ -342,7 +346,6 @@ export default {
             } else {
                 cities.style.display = "block"
             }
-
             this.$set(item, "expand", !item.expand)
         },
         getWorldData() {
@@ -359,7 +362,6 @@ export default {
                     cc += element.confirmedCount
                     dc += element.deadCount
                     cuc += element.curedCount
-
                     var objTotal = {}
                     objTotal.name = element.provinceName
                     objTotal.value = element.confirmedCount
@@ -383,10 +385,8 @@ export default {
                 this.worldNow.confirmedCount = cc
                 this.worldNow.deadCount = dc
                 this.worldNow.curedCount = cuc
-
                 // 展示世界国家数据
                 this.countries = response.data.data.countries.slice(0,6)
-
                 this.showWorldMap(this.mapWorldTotalList, '全球疫情地图-累计确诊数')
                 this.showBarChartTwo(this.countries.slice(0,6), 'barWorldCountryChart')
             })
@@ -433,7 +433,6 @@ export default {
                 }
                 //展示数据
                 this.newListData = this.tmpListData.slice(0,6)
-
                 this.showMap(this.mapChinaTotalList, '中国累计确诊疫情地图')
                 this.showBarChart(this.mapChinaTotalList, '累计确诊')
                 
@@ -448,7 +447,6 @@ export default {
                 this.showLineChart(this.dayChinaChanges, '中国累计确诊曲线', 1, 'lineChart')
             })
             .catch(response => {
-
             })
         },
         getDayDataInWorld() {
@@ -458,25 +456,20 @@ export default {
                 this.showLineChart(this.dayWorldChanges, '全球累计确诊曲线', 1, 'lineWorldChart')
             })
             .catch(response => {
-
             })
         },
         getDayDataInContinents() {
             this.$axios.get(`${this.baseURL}/getDayDataInContinents`)
             .then(response => {
                 this.dayTotalContinents =  response.data.data.dayContinents.dayContinents
-
                 var len = this.dayTotalContinents.asiaDayChange.length
-
                 this.dayContinents.push(this.dayTotalContinents.asiaDayChange[len - 1])
                 this.dayContinents.push(this.dayTotalContinents.europeDayChange[len - 1])
                 this.dayContinents.push(this.dayTotalContinents.northAmericaDayChange[len - 1])
                 this.dayContinents.push(this.dayTotalContinents.southAmericaDayChange[len - 1])
                 this.dayContinents.push(this.dayTotalContinents.africaDayChange[len - 1])
                 this.dayContinents.push(this.dayTotalContinents.oceaniaDayChange[len - 1])
-
                 
-
                 this.dayContinents.forEach(element => {
                     var objTotal = {}
                     objTotal.name = element.areaName
@@ -497,14 +490,10 @@ export default {
                     objCured.value = element.curedCount
                     this.dayChangeOneInContinents.mapContinentsCuredList.push(objCured)
                 })
-
                 this.showPieChart(this.dayChangeOneInContinents.mapContinentsTotalList, '各大洲累计确诊')
                 this.showContinentsLineChart(this.dayTotalContinents, '各大洲累计确诊曲线', 1)
-
-
             })
             .catch(response => {
-
             })
         },
         showMap(mapList, text) {
@@ -605,3 +594,4 @@ export default {
 <style scoped>
     @import "../api/css/myStyle.css";
 </style>
+© 2021 GitHub, Inc.

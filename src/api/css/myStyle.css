@@ -75,10 +75,10 @@
 .item {
     width: 25%;
     height: 70px;
-    margin: 0 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     align-items: center;
+    margin: 0 50px;
 }
