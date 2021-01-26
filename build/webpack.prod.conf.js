@@ -10,7 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-
+const UglifyJsParallelPlugin = require('webpack-parallel-uglify-plugin');
 const env = require('../config/prod.env')
 
 const webpackConfig = merge(baseWebpackConfig, {
@@ -29,6 +29,16 @@ const webpackConfig = merge(baseWebpackConfig, {
   },
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
+    new UglifyJsParallelPlugin({
+          cacheDir: '.cache/',
+          uglifyJS:{
+          output: {
+              comments: false
+          },
+          compress: false
+          }
+    }),
+ 
     new webpack.DefinePlugin({
       'process.env': env
     }),
@@ -124,8 +134,8 @@ if (config.build.productionGzip) {
 
   webpackConfig.plugins.push(
     new CompressionWebpackPlugin({
-      asset: '[path].gz[query]',
-      //filename: '[path].gz[query]',
+      //asset: '[path].gz[query]',//注释掉
+      filename: '[path].gz[query]',//添加
       algorithm: 'gzip',
       test: new RegExp(
         '\\.(' +
