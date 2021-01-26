@@ -124,7 +124,8 @@ if (config.build.productionGzip) {
 
   webpackConfig.plugins.push(
     new CompressionWebpackPlugin({
-      asset: '[path].gz[query]',
+      //asset: '[path].gz[query]',//注释掉
+      filename: '[path].gz[query]',//添加
       algorithm: 'gzip',
       test: new RegExp(
         '\\.(' +
