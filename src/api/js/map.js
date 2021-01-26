@@ -1,6 +1,6 @@
-import '../../../node_modules/echarts/map/js/china.js'
-import '../../../node_modules/echarts/map/js/world.js'
-import echarts from 'echarts'
+//import '../../../node_modules/echarts/map/js/china.js'
+//import '../../../node_modules/echarts/map/js/world.js'
+//import echarts from 'echarts'
 export default {
     showMap(mapList, text) {
         var MyChart = echarts.init(document.getElementById('map'))

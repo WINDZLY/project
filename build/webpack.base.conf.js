@@ -19,6 +19,7 @@ module.exports = {
   externals: {
     'vue': 'Vue',
     'vue-router': 'VueRouter',
+    'echarts': 'echarts',
     'ElementUI': 'ELEMENT',
     'axios': 'axios',
   },
