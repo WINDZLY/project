@@ -85,8 +85,8 @@
                 <span class="span gray">{{item.confirmedCount}}</span>
                 <span class="span gray">{{item.deadCount}}</span>
                 <span class="span gray">{{item.curedCount}}
-                    <font-awesome-icon icon="caret-down" v-if = "!item.expand" />
-                    <font-awesome-icon icon="caret-up" v-if = "item.expand"/>
+                    <i class="fa fa-caret-down" v-if = "!item.expand" />
+                    <i  class="fa fa-caret-up" v-if = "item.expand"/>
                 </span>
             </div>
             <div class="cities">
