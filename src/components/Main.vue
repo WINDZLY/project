@@ -90,7 +90,7 @@
                 </span>
             </div>
             <div class="cities">
-                <div class="row"  v-for="city in item.cities">
+                <div class="data" style="background-color: white;" v-for="city in item.cities">
                     <span class="span gray">{{city.cityName}}</span>
                     <span class="span gray">{{item.flag_ccc == 0 ? city.currentConfirmedCount : '--'}}</span>
                     <span class="span gray">{{item.flag_cc == 0 ? city.confirmedCount : '--'}}</span>

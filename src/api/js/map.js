@@ -117,6 +117,7 @@ export default {
 
         var chartDom = document.getElementById(id)
         var myChart = echarts.init(chartDom)
+        window.onresize = myChart.resize
         var option
 
         var posList = [
@@ -307,7 +308,7 @@ export default {
             },
             tooltip : {
                 show : true,
-                trigger : 'item'
+                trigger : 'axis'
             },
             dataZoom : [ { // 这个dataZoom组件，默认控制x轴。
                 type : 'slider', // 这个 dataZoom 组件是 slider 型 dataZoom 组件
