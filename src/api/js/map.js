@@ -34,11 +34,11 @@ export default {
                 name: text.slice(2,6),
                 type: 'map',
                 mapType: 'china',
-                roam: false,
+                roam: true,
                 label: {
                     normal: {
                         show: true,
-                        // fontSize: 8
+                        //fontSize: 8
                     },
                     emphasis: {
                         show: true
