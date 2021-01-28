@@ -200,7 +200,7 @@ export default {
             fontSize: 18,
             rich: {
                 name: {
-                    color: 'black',
+                    //color: 'black',
                     fontSize: 18
                     //distance: 50,
                 }
@@ -247,7 +247,7 @@ export default {
                     name: '累计确诊',
                     type: 'bar',
                     barGap: 0,
-                    color: 'rgb(174, 33, 44)',
+                    //color: 'rgb(174, 33, 44)',
                     label: labelOption,
                     emphasis: {
                         focus: 'series'
@@ -257,7 +257,7 @@ export default {
                 {
                     name: '现存确诊',
                     type: 'bar',
-                    color: 'rgb(247, 76, 49)',
+                    //color: 'rgb(247, 76, 49)',
                     label: labelOption,
                     emphasis: {
                         focus: 'series'
@@ -267,7 +267,7 @@ export default {
                 {
                     name: '累计治愈',
                     type: 'bar',
-                    color: 'rgb(40, 183, 163)',
+                    //color: 'rgb(40, 183, 163)',
                     label: labelOption,
                     emphasis: {
                         focus: 'series'
@@ -277,7 +277,7 @@ export default {
                 {
                     name: '累计死亡',
                     type: 'bar',
-                    color: 'rgb(93, 112, 146)',
+                    //color: 'rgb(93, 112, 146)',
                     label: labelOption,
                     emphasis: {
                         focus: 'series'
