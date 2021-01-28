@@ -73,7 +73,7 @@
     margin: 10px 0;
 }
 .item {
-    width: 80px;
+    width: 25%;
     height: 70px;
     display: flex;
     flex-direction: column;
